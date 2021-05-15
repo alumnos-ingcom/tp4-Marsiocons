@@ -1,28 +1,38 @@
-def funcion_uno(dato, intentos):
+################
+# Marcio Betanzo - @marsiocons
+# Plantilla de ejercicio
+# UNRN Andina - Introducción a la Ingenieria en Computación
+################
+
+class IngresoIncorrecto(Exception):
+    """Esta es la Excepcion para el ingreso incorrecto"""
+    pass 
+
+def conversion_int(dato, intentos):
     while intentos > 0:
         if intentos <= 0:
             break
         try:
             dato_int = int(dato)
-            if ( funcion_tres(dato_int) ):
-                print(f"el número cumple con las características. ( {dato_int} )")
+            if ( ingreso_entero_restringido(dato_int) ):
+                print(f"El número cumple con las características. ( {dato_int} )")
                 break
             else:
-                funcion_dos(dato, intentos)
+                ingreso_entero_reintento(dato, intentos)
                 break
         except ValueError:
-            print("no se puede transformar")
-            funcion_dos(dato, intentos)
+            print("No se puede transformar")
+            ingreso_entero_reintento(dato, intentos)
             return
 
-def funcion_dos(dato, intentos):
+def ingreso_entero_reintento(dato, reintentos):
     print(f"El dato es inválido: ( {dato} )")
-    print(f"Intentos restantes: {intentos - 1}")
-    intentos = intentos - 1
-    if (intentos > 0):
-        pedir_dato(intentos)
+    print(f"Intentos restantes: {reintentos - 1}")
+    reintentos = reintentos - 1
+    if (reintentos > 0):
+        pedir_dato(reintentos)
 
-def funcion_tres(dato, dato_min=0, dato_max=10):
+def ingreso_entero_restringido(dato, dato_min=0, dato_max=10):
     if (dato >= dato_min and dato <= dato_max):
         return True
     else:
@@ -30,7 +40,12 @@ def funcion_tres(dato, dato_min=0, dato_max=10):
 
 def pedir_dato(intentos=5):
     dato_new= input("Ingrese un dato: ")
-    funcion_uno(dato_new, intentos)
+    conversion_int(dato_new, intentos)
     
-    
-pedir_dato()
+
+def prueba():
+    pedir_dato()
+    pass
+
+if __name__ == "__main__":
+    prueba()

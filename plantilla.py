@@ -4,8 +4,6 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
-modifiqué plantilla
-volví a modificar
 
 def prueba():
     pass
