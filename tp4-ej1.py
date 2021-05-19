@@ -29,6 +29,8 @@ def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
         raise IngresoIncorrecto("Máximos intentos permitidos.")
         
 def ingreso_entero_restringido(mensaje,valor_minimo=0, valor_maximo=10):
+    if (valor_minimo > valor_maximo or valor_minimo < 0 < valor_maximo):
+        raise IngresoIncorrecto("Valor mínimo o máximo incorrectos.")
     print(f"{mensaje} {valor_minimo} y {valor_maximo}")
     numero = ingreso_entero("Ingrese un número:")
     if (numero >= valor_minimo and numero <= valor_maximo):
@@ -39,8 +41,8 @@ def ingreso_entero_restringido(mensaje,valor_minimo=0, valor_maximo=10):
 
 def prueba():
     #ingreso_entero("Ingrese un número:")
-    ingreso_entero_reintento("Ingrese un número.", 5)
-    #ingreso_entero_restringido("Ingrese un número entre:")
+    #ingreso_entero_reintento("Ingrese un número.", 5)
+    ingreso_entero_restringido("Ingrese un número entre:", -12, 22)
     
     pass
 
