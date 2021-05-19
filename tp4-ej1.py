@@ -13,8 +13,8 @@ def ingreso_entero(entrada):
     try:
         salida = int(ingreso)
         return salida
-    except ValueError:
-        raise IngresoIncorrecto("No se puede transformar.")  
+    except ValueError as err:
+        raise IngresoIncorrecto("No se puede transformar.") from err  
 
 
 def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
