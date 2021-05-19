@@ -21,18 +21,26 @@ def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
     if cantidad_reintentos > 0:
         print(f"{mensaje} Intentos: {cantidad_reintentos}")
         try:
-            print(ingreso_entero("Número:"))
+            return (ingreso_entero("Número:"))
         except IngresoIncorrecto:
             cantidad_reintentos = cantidad_reintentos - 1
             ingreso_entero_reintento("Error.", cantidad_reintentos)
-            raise IngresoIncorrecto("Error al transformar")
     else:
         raise IngresoIncorrecto("Máximos intentos permitidos.")
         
- 
+def ingreso_entero_restringido(mensaje,valor_minimo=0, valor_maximo=10):
+    print(f"{mensaje} {valor_minimo} y {valor_maximo}")
+    numero = ingreso_entero("Ingrese un número:")
+    if (numero >= valor_minimo and numero <= valor_maximo):
+        return(numero)
+    else:
+        raise IngresoIncorrecto(f"El número no está entre los valores {valor_minimo} y {valor_maximo}")
+    
+
 def prueba():
     #ingreso_entero("Ingrese un número:")
     ingreso_entero_reintento("Ingrese un número.", 5)
+    #ingreso_entero_restringido("Ingrese un número entre:")
     
     pass
 
