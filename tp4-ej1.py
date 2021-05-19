@@ -14,21 +14,26 @@ def ingreso_entero(entrada):
         salida = int(ingreso)
         return salida
     except ValueError:
-        #raise IngresoIncorrecto("No se puede transformar.")  
-        ingreso_entero_reintento("Error. Reintente.", intento-1)
-        
+        raise IngresoIncorrecto("No se puede transformar.")  
+
 
 def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
-    print(f"{mensaje} Intentos: {cantidad_reintentos}")
     if cantidad_reintentos > 0:
-        print(ingreso_entero("Número:"))
+        print(f"{mensaje} Intentos: {cantidad_reintentos}")
+        try:
+            print(ingreso_entero("Número:"))
+        except IngresoIncorrecto:
+            cantidad_reintentos = cantidad_reintentos - 1
+            ingreso_entero_reintento("Error.", cantidad_reintentos)
+            raise IngresoIncorrecto("Error al transformar")
     else:
-        raise IngresoIncorrecto("Máximos intentos permitidos..")
-        
+        raise IngresoIncorrecto("Máximos intentos permitidos.")
         
  
 def prueba():
-    ingreso_entero("Ingrese un número:")
+    #ingreso_entero("Ingrese un número:")
+    ingreso_entero_reintento("Ingrese un número.", 5)
+    
     pass
 
 if __name__ == "__main__":
