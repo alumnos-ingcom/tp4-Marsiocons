@@ -8,7 +8,7 @@ class IngresoIncorrecto(Exception):
     """Esta es la Excepcion para el ingreso incorrecto"""
     pass
 
-def ingreso_entero(entrada, intento):
+def ingreso_entero(entrada):
     ingreso = input(f"{entrada} #")
     try:
         salida = int(ingreso)
@@ -21,14 +21,14 @@ def ingreso_entero(entrada, intento):
 def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
     print(f"{mensaje} Intentos: {cantidad_reintentos}")
     if cantidad_reintentos > 0:
-        print(ingreso_entero("Número:", cantidad_reintentos))
+        print(ingreso_entero("Número:"))
     else:
-        raise IngresoIncorrecto("No se puede transformar.")
+        raise IngresoIncorrecto("Máximos intentos permitidos..")
         
         
  
 def prueba():
-    ingreso_entero_reintento("Ingrese un número.", 5)
+    ingreso_entero("Ingrese un número:")
     pass
 
 if __name__ == "__main__":
