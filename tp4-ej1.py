@@ -20,8 +20,10 @@ def ingreso_entero(entrada, intento):
 
 def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
     print(f"{mensaje} Intentos: {cantidad_reintentos}")
-    print(ingreso_entero("Número:", cantidad_reintentos))
-        
+    if cantidad_reintentos > 0:
+        print(ingreso_entero("Número:", cantidad_reintentos))
+    else:
+        raise IngresoIncorrecto("No se puede transformar.")
         
         
  
