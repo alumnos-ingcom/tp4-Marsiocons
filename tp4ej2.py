@@ -10,19 +10,19 @@ def suma_lenta(numero, otro_numero):
     resultado = numero + otro_numero
     
     #### si ambos números son positivos ####
-    if (numero > 0 < otro_numero):
+    if (numero >= 0 <= otro_numero):
         while numero <= resultado:
             print(numero)
             numero = numero + 1
             
     #### si el primer número es positivo y el segundo negativo ####
-    if (numero > 0 > otro_numero):
+    if (numero >= 0 > otro_numero):
         while numero >= resultado:
             print(numero)
             numero = numero - 1
             
     #### si el primer número es negativo y el segundo positivo ####
-    if (numero < 0 < otro_numero):
+    if (numero < 0 <= otro_numero):
         while numero <= resultado:
             print(numero)
             numero = numero + 1
