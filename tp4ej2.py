@@ -34,7 +34,7 @@ def suma_lenta(numero, otro_numero):
 def prueba():
     num1 = ing.ingreso_entero("Ingrese un número:")
     num2 = ing.ingreso_entero("Ingrese un número:")
-    print(suma_lenta(num1, num2))
+    print(f"La suma lenta ({num1} +- 1) de {num1} y {num2} es: {suma_lenta(num1,num2)}")
     pass
 
 if __name__ == "__main__":
