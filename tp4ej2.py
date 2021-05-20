@@ -7,6 +7,15 @@
 import tp4ej1 as ing
 
 def suma_lenta(numero, otro_numero):
+    
+    """La función hace uso de ing.ingreso_entero() (función importada
+    de tp4eje1) para ingresar dos números y hacer una suma/resta
+    entre ellos.
+    Retorna el resultado de dicha operación.
+    El parámetro "numero" es el primer número (base de la operación).
+    El parámetro "otro_numero" es el número que se le va a
+    restar/sumar al primer número."""
+    
     resultado = numero + otro_numero
     
     #### si ambos números son positivos ####

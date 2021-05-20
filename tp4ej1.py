@@ -9,6 +9,12 @@ class IngresoIncorrecto(Exception):
     pass
 
 def ingreso_entero(entrada):
+    
+    """La función intenta transformar lo que el usuario ingrese
+        en un número entero. Si no lo logra se ejecuta la excepción
+        IngresoIncorrecto.
+        El parámetro "entrada" es el mensaje que acompaña al ingreso de un número"""
+    
     ingreso = input(f"{entrada} #")
     try:
         salida = int(ingreso)
@@ -18,6 +24,15 @@ def ingreso_entero(entrada):
 
 
 def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
+    
+    """La función hace uso de ingreso_entero() para intentar
+        retornar un número x cantidad de veces.
+        Al superar los intentos, ejecuta la excepción IngresoIncorrecto.
+        El parámetro "mensaje" es el mensaje que acompaña al ingreso
+        de un número.
+        El parámetro "cantidad_reintentos" es la cantidad de intentos
+        que hay para retornar un número."""
+    
     if cantidad_reintentos > 0:
         print(f"{mensaje} Intentos: {cantidad_reintentos}")
         try:
@@ -29,7 +44,23 @@ def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
         raise IngresoIncorrecto("Máximos intentos permitidos.")
         
 def ingreso_entero_restringido(mensaje,valor_minimo=0, valor_maximo=10):
-    if (valor_minimo > valor_maximo or valor_minimo < 0 < valor_maximo):
+    
+    """La función hace uso de ingreso_entero() para retonar el número
+        si y sólo si se encuentra dentro de los valores mínimos y máximos.
+        Si el número no está dentro de dichos valores, ejecuta la excepción
+        IngresoIncorrecto.
+        Si el valor mínimo es mayor que el valor máximo, ejecuta la
+        excepción IngresoIncorrecto.
+        Si el valor mínimo es igual al máximo, ejecuta la excepción
+        IngresoIncorrecto.
+        El parámetro "mensaje" es el mensaje que acompaña al ingreso de un número.
+        El parámetro "valor_minimo" es el valor mínimo que puede adoptar
+        el número ingresado.
+        El parámetro "valor_maximo" es el valor máximo que puede adoptar
+        el número ingresado.
+    """
+    
+    if (valor_minimo > valor_maximo or valor_minimo == valor_maximo):
         raise IngresoIncorrecto("Valor mínimo o máximo incorrectos.")
     print(f"{mensaje} {valor_minimo} y {valor_maximo}")
     numero = ingreso_entero("Ingrese un número:")
@@ -40,60 +71,10 @@ def ingreso_entero_restringido(mensaje,valor_minimo=0, valor_maximo=10):
     
 
 def prueba():
-    #ingreso_entero("Ingrese un número:")
-    #ingreso_entero_reintento("Ingrese un número.", 5)
-    ingreso_entero_restringido("Ingrese un número entre:", -12, 22)
-    
+    #print(ingreso_entero("Ingrese un número:"))
+    #print(ingreso_entero_reintento("Ingrese un número.", 5))
+    print(ingreso_entero_restringido("Ingrese un número entre:", -23, 22))
     pass
 
 if __name__ == "__main__":
     prueba()
-# 
-# 
-# class IngresoIncorrecto(Exception):
-#     """Esta es la Excepcion para el ingreso incorrecto"""
-#     pass 
-# 
-# def conversion_int(dato, intentos):
-#     while intentos > 0:
-#         if intentos <= 0:
-#             break
-#         try:
-#             dato_int = int(dato)
-#             if ( ingreso_entero_restringido(dato_int) ):
-#                 print(f"El número cumple con las características. ( {dato_int} )")
-#                 break
-#             else:
-#                 ingreso_entero_reintento(dato, intentos)
-#                 break
-#         except ValueError as err:
-#             raise IngresoIncorrecto("No se puede transformar")
-#             ingreso_entero_reintento(dato, intentos)
-#             #print("No se puede transformar")
-#             
-#             return
-# 
-# def ingreso_entero_reintento(dato, reintentos):
-#     print(f"El dato es inválido: ( {dato} )")
-#     print(f"Intentos restantes: {reintentos - 1}")
-#     reintentos = reintentos - 1
-#     if (reintentos > 0):
-#         pedir_dato(reintentos)
-# 
-# def ingreso_entero_restringido(dato, dato_min=0, dato_max=10):
-#     if (dato >= dato_min and dato <= dato_max):
-#         return True
-#     else:
-#         return False
-# 
-# def pedir_dato(intentos=5):
-#     dato_new= input("Ingrese un dato: ")
-#     conversion_int(dato_new, intentos)
-#     
-# 
-# def prueba():
-#     pedir_dato()
-#     pass
-# 
-# if __name__ == "__main__":
-#     prueba()
