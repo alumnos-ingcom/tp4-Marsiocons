@@ -71,9 +71,9 @@ def ingreso_entero_restringido(mensaje,valor_minimo=0, valor_maximo=10):
     
 
 def prueba():
-    #print(ingreso_entero("Ingrese un número:"))
+    print(ingreso_entero("Ingrese un número:"))
     #print(ingreso_entero_reintento("Ingrese un número.", 5))
-    print(ingreso_entero_restringido("Ingrese un número entre:", -23, 22))
+    #print(ingreso_entero_restringido("Ingrese un número entre:", -23, 22))
     pass
 
 if __name__ == "__main__":
