@@ -6,6 +6,7 @@
 
 
 def prueba():
+    es_palindromo("Kasafasak")
     pass
 
 if __name__ == "__main__":
