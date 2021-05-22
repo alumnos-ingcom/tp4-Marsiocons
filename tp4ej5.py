@@ -20,8 +20,6 @@ def prueba():
     num = ing.ingreso_entero("""Ingrese un número para determinar si es
     negativo, positivo o cero.""")
     print(signo(num))
-    
-    pass
 
 if __name__ == "__main__":
     prueba() 

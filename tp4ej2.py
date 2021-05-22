@@ -7,7 +7,6 @@
 import tp4ej1 as ing
 
 def suma_lenta(numero, otro_numero):
-    
     """La función hace uso de ing.ingreso_entero() (función importada
     de tp4eje1) para ingresar dos números y hacer una suma/resta
     entre ellos.
@@ -44,7 +43,6 @@ def prueba():
     num1 = ing.ingreso_entero("Ingrese un número:")
     num2 = ing.ingreso_entero("Ingrese un número:")
     print(f"La suma lenta ({num1} +- 1) de {num1} y {num2} es: {suma_lenta(num1,num2)}")
-    pass
 
 if __name__ == "__main__":
     prueba() 

@@ -18,7 +18,6 @@ def minimo(lista):
         if (numero > lista[i]):
             numero = lista[i]
     return numero
-            
 
 def crear_lista():
     cant = ing.ingreso_entero("Cuántos números desea guardar en la lista?")
@@ -32,9 +31,10 @@ def crear_lista():
 
 def prueba():
     lista = crear_lista()
-    print(maximo(lista))
+    print(f"El número más grande de {lista} es:")
+    print (maximo(lista))
+    print(f"El número más chico de {lista} es:")
     print(minimo(lista))
-    pass
 
 if __name__ == "__main__":
     prueba() 

@@ -69,8 +69,9 @@ def division_lenta(dividendo, divisor):
 def prueba():
     num1 = ing.ingreso_entero("Ingrese el dividendo de la operación: ")
     num2 = ing.ingreso_entero("Ingrese el divisor de la operación: ")
-    print(division_lenta(num1,num2))
-    pass
+    rest_coc = division_lenta(num1, num2)
+    print(f"El cociente de la divisón es: {rest_coc[1]}")
+    print(f"El resto de la divisón es: {rest_coc[0]}")
 
 if __name__ == "__main__":
     prueba() 

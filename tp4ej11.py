@@ -37,7 +37,7 @@ def es_palindromo(texto):
         return True
     else:
         return False
-        
+
 def prueba():
     print(es_palindromo("asdfdsa"))
     pass

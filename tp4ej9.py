@@ -15,18 +15,19 @@ def es_primo(numero):
     for i in range(numero):
         if(numero % (i+1)  == 0):
             divisores = divisores + 1
+            
     if (divisores > 2):
         return False
     else:
         return True
 
 def prueba():
-    num = ing.ingreso_entero("Ingrese un número para saber si es primo o no.")
+    num = ing.ingreso_entero_restringido("Ingrese un número entre: ", 1, 999999)
+    print("Comprobando si el número es primo...")
     if(es_primo(num)):
         print("El número sí es primo!")
     else:
         print("El número no es primo!")
-    pass
 
 if __name__ == "__main__":
     prueba() 

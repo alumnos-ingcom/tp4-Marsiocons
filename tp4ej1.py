@@ -9,7 +9,6 @@ class IngresoIncorrecto(Exception):
     pass
 
 def ingreso_entero(entrada):
-    
     """La función intenta transformar lo que el usuario ingrese
         en un número entero. Si no lo logra se ejecuta la excepción
         IngresoIncorrecto.
@@ -22,9 +21,7 @@ def ingreso_entero(entrada):
     except ValueError as err:
         raise IngresoIncorrecto("No se puede transformar.") from err  
 
-
 def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
-    
     """La función hace uso de ingreso_entero() para intentar
         retornar un número x cantidad de veces.
         Al superar los intentos, ejecuta la excepción IngresoIncorrecto.
@@ -43,8 +40,7 @@ def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
     else:
         raise IngresoIncorrecto("Máximos intentos permitidos.")
         
-def ingreso_entero_restringido(mensaje,valor_minimo=0, valor_maximo=10):
-    
+def ingreso_entero_restringido(mensaje,valor_minimo=0, valor_maximo=10):    
     """La función hace uso de ingreso_entero() para retonar el número
         si y sólo si se encuentra dentro de los valores mínimos y máximos.
         Si el número no está dentro de dichos valores, ejecuta la excepción
@@ -69,12 +65,10 @@ def ingreso_entero_restringido(mensaje,valor_minimo=0, valor_maximo=10):
     else:
         raise IngresoIncorrecto(f"El número no está entre los valores {valor_minimo} y {valor_maximo}")
     
-
 def prueba():
     print(ingreso_entero("Ingrese un número:"))
     #print(ingreso_entero_reintento("Ingrese un número.", 5))
     #print(ingreso_entero_restringido("Ingrese un número entre:", -23, 22))
-    pass
 
 if __name__ == "__main__":
     prueba()
