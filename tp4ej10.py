@@ -32,7 +32,6 @@ def factores_primos(numero):
 def prueba():
     num = ing.ingreso_entero("Ingrese un número para buscar sus factores primos!")
     print(factores_primos(num))
-    pass
 
 if __name__ == "__main__":
     prueba() 

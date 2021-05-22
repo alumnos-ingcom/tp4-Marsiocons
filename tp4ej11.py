@@ -40,7 +40,6 @@ def es_palindromo(texto):
 
 def prueba():
     print(es_palindromo("asdfdsa"))
-    pass
 
 if __name__ == "__main__":
     prueba() 
