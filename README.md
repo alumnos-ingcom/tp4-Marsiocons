@@ -142,12 +142,12 @@ Escribir una función que retorne una `tuple` con factores primos de un numero e
 ``` python
 def factores_primos(numero):
 ```
-### 10. Palíndromo
+### 11. Palíndromo
 Escribir una función que indique con True si una palabra o frase ingresada se trata de un palindromo.
 Palíndromo, es si se lee igual de derecha a izquierda que de izquierda a derecha.
 
 ``` python
-def es_palindromo(texto)
+
 ```
 
 ## Plantilla de entrega individual
